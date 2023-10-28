@@ -1,7 +1,13 @@
 export const GiphyApp = () => {
   return (
     <>
-      <h1>GiphyApp</h1>
+      {/* Title */}
+      <h1>{GiphyApp}</h1>
+
+      {/* input */}
+
+      {/* Gifs list */}
+        {/* Gif item */}
     </>
   );
 };
