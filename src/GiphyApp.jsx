@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AddCategory } from "./components/AddCategory";
 
 export const GiphyApp = () => {
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState(["edson"]);
 
   const handleAddCategory = () => {
     setCategories([...categories, "new"]);
@@ -14,8 +14,7 @@ export const GiphyApp = () => {
       <h1>GiphyApp</h1>
 
       {/* input */}
-      <AddCategory />
-      <button onClick={handleAddCategory}>Add</button>
+      <AddCategory setCategories={setCategories} />
 
       {/* Gifs list */}
       {/* Gif item */}
