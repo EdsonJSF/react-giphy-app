@@ -4,8 +4,8 @@ import { AddCategory } from "./components/AddCategory";
 export const GiphyApp = () => {
   const [categories, setCategories] = useState(["edson"]);
 
-  const handleAddCategory = () => {
-    setCategories([...categories, "new"]);
+  const handleAddCategory = (category) => {
+    setCategories([category, ...categories]);
   };
 
   return (
@@ -14,7 +14,10 @@ export const GiphyApp = () => {
       <h1>GiphyApp</h1>
 
       {/* input */}
-      <AddCategory setCategories={setCategories} />
+      <AddCategory
+        // setCategories={setCategories}
+        onValue={handleAddCategory}
+      />
 
       {/* Gifs list */}
       {/* Gif item */}
