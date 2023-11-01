@@ -5,6 +5,7 @@ export const GiphyApp = () => {
   const [categories, setCategories] = useState(["edson"]);
 
   const handleAddCategory = (category) => {
+    if (categories.includes(category)) return
     setCategories([category, ...categories]);
   };
 
