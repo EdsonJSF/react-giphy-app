@@ -1,34 +1,25 @@
 import { useState } from "react";
 import { AddCategory } from "./components/AddCategory";
+import { GifGrid } from "./components/GifGrid";
 
 export const GiphyApp = () => {
   const [categories, setCategories] = useState(["edson"]);
 
   const handleAddCategory = (category) => {
-    if (categories.includes(category)) return
+    if (categories.includes(category)) return;
     setCategories([category, ...categories]);
   };
 
   return (
     <>
-      {/* Title */}
       <h1>GiphyApp</h1>
 
-      {/* input */}
-      <AddCategory
-        // setCategories={setCategories}
-        onValue={handleAddCategory}
-      />
+      <AddCategory onValue={handleAddCategory} />
 
-      {/* Gifs list */}
-      {/* Gif item */}
-
-      {/* Categories list */}
       <ol>
-        {/* Category item */}
-        {categories.map((category) => {
-          return <li key={category}>{category}</li>;
-        })}
+        {categories.map((category) => (
+          <GifGrid key={category} category={category} />
+        ))}
       </ol>
     </>
   );
