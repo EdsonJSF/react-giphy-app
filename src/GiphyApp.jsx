@@ -16,11 +16,11 @@ export const GiphyApp = () => {
 
       <AddCategory onValue={handleAddCategory} />
 
-      <ol>
+      <div>
         {categories.map((category) => (
           <GifGrid key={category} category={category} />
         ))}
-      </ol>
+      </div>
     </>
   );
 };
